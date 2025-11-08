@@ -1,0 +1,9 @@
+name: cap6415-img2vid
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - -r requirements.txt

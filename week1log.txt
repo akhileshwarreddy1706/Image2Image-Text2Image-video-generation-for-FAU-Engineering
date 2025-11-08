@@ -1,0 +1,24 @@
+# Week 1 Log (ending November 9, 2025)
+Date created: November 7 2025 — 1:32 PM (EST)
+Team: Akhileshwar Reddy Bommineni, Manaswini Paspuleti, Patri Jaydeep
+
+## What we planned
+- Define scope and select baseline models (SDXL, ControlNet, AnimateDiff).
+- Create public GitHub repo and email professor link.
+- Draft README and file structure.
+- Collect sample FAU Engineering images for reference.
+
+## What we did
+- Created GitHub repo and cloned it locally.
+- Built initial folders and documentation.
+- Added requirements and environment files.
+- Downloaded one FAU Engineering image for `results/frame_000.png`.
+
+## Obstacles / Decisions
+- GPU availability for full runs (Colab vs local).
+- Model version choice (SDXL gives better quality for T2I).
+
+## Next steps (Week 2)
+- Implement `generate_frames.py` to produce 5–10 frames.
+- Add `frames_to_video.py` to assemble frames.
+- Test mini pipeline and save demo.mp4 in `results/`.
