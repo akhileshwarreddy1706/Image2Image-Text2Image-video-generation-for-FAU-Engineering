@@ -23,27 +23,28 @@ All code is documented, and results can be replicated using the provided scripts
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
-
+```bash
 git clone https://github.com/akhileshwarreddy1706/Image2Image-Text2Image-video-generation-for-FAU-Engineering.git
 cd Image2Image-Text2Image-video-generation-for-FAU-Engineering
-
+```
 ### 2️⃣ (Recommended) Create a virtual environment
-
+```bash
 python -m venv .venv
 source .venv/bin/activate     # (on macOS/Linux)
 # OR
 .venv\Scripts\activate        # (on Windows)
-
+```
 ### 3️⃣ Install dependencies
-
+```bash
 pip install -r requirements.txt
-
+```
 ### 4️⃣ (Optional) Create the environment via Conda
-
+```bash
 conda env create -f environment.yml
 conda activate cap6415-img2vid
-
+```
 ## Repository Structure
+
 
 .
 ├── src/
