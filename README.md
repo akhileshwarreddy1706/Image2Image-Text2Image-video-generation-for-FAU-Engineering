@@ -8,15 +8,13 @@
 ---
 
 ## 🎯 Abstract
-Engineering research and education at Florida Atlantic University (FAU) benefit from realistic and creative visualizations.  
-This project develops a **hybrid AI video generation pipeline** that combines **Text-to-Image (T2I)** and **Image-to-Image (I2I)** diffusion models to create short, AI-generated video clips depicting **FAU Engineering themes**—such as robotics, ocean engineering, autonomous drones, and smart manufacturing.
+Visualizations that are realistic, yet creative, help both engineering research and education at FAU.
+The project will develop a **hybrid AI video generation pipeline** that leverages **Text-to-Image (T2I)** and **Image-to-Image (I2I)** diffusion models to generate short, AI-generated video clips depicting **FAU Engineering themes**, including robotics, ocean engineering, autonomous drones, and smart manufacturing.
 
-Our approach first uses a **Text-to-Image model** (Stable Diffusion / SDXL) to generate an initial frame from a descriptive prompt (e.g., “An FAU robotics engineer calibrating a drone inside a modern lab”).  
-Then an **Image-to-Image refinement stage** (using ControlNet or AnimateDiff) evolves that frame into a short sequence of images showing motion or lighting change.  
-Finally, the frames are stitched into a smooth video using OpenCV.  
+Our method first leverages a Text-to-Image model (Stable Diffusion/SDXL) for generating the first frame from a descriptive prompt, such as "FAU robotics engineer calibrating a drone inside a modern lab".
+Then, an **Image-to-Image refinement stage**-with ControlNet or AnimateDiff-develops that frame into a short sequence of images showing motion or lighting change.
 
-The system is modular, reproducible, and designed for future FAU-specific dataset fine-tuning.  
-All code is documented, and results can be replicated using the provided scripts.
+Finally, the frames are stitched into a smooth video with OpenCV. It is a modular, reproducible system and was prepared for future FAU-specific dataset fine-tuning. All the code is documented, and all results are reproducible with scripts provided.
 
 ---
 
