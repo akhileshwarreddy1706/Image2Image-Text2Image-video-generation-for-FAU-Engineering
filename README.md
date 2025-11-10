@@ -2,7 +2,7 @@
 
 **Course:** CAP6415 – Computer Vision (Fall 2025)  
 **Team:** Akhileshwar Reddy Bommineni, Manaswini Pasupuleti, Pathri Jaydeep  
-**Instructor:** Prof. Vadzim Sokol (vadzic@fau.edu)  
+**Instructor:** Prof. Velibor Adzic (vadzic@fau.edu)
 **University:** Florida Atlantic University – College of Engineering and Computer Science  
 
 ---
