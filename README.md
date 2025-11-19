@@ -51,8 +51,8 @@ conda activate cap6415-img2vid
 │
 ├── notebooks/                    # Optional notebooks for experiments
 ├── results/
-│   └── frame_000.png             # Sample FAU Engineering frame
-│
+│   ├── frame_000.png
+│   └── week2_frames/             # Week 2 placeholder frames
 ├── week1log.txt                  # Weekly progress log (Week 1 example)
 ├── requirements.txt              # Python dependencies
 ├── environment.yml               # Conda environment

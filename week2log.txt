@@ -1,0 +1,27 @@
+# Week 2 Log (ending November 16, 2025)
+Date created: November 10 2025 — 7:05 PM (EST)
+Team: Akhileshwar Reddy Bommineni, Manaswini Pasupuleti, Pathri Jaydeep
+
+## What we planned
+- Start outlining the full pipeline for Text2Image → Image2Image → Video generation.
+- Decide which Stable Diffusion / SDXL variants and ControlNet/AnimateDiff models to use.
+- Plan how to structure the code in src/ and organize outputs in the results/ folder.
+- Review example computer vision project repositories to match documentation style.
+
+## What we did
+- Reviewed the project requirements document and clarified expectations for all five weeks.
+- Finalized the GitHub repository structure (src/, results/, logs, environment files).
+- Updated the README to include abstract, repository structure, results section, references, and license.
+- Set up verified Git commit signing using a GPG key linked to my FAU email for authenticity.
+- Planned how to implement the initial frame generation and video assembly code in Week 3.
+
+## Obstacles / Decisions
+- Limited time and GPU access in Week 2, so full SDXL and ControlNet integration was postponed.
+- Decided to prioritize documentation, reproducibility setup, and repository correctness this week.
+- Chose to continue using Python with the Diffusers library for future implementation.
+
+## Next steps (Week 3)
+- Implement a basic Text2Image pipeline using SDXL to generate initial frames from FAU Engineering prompts.
+- Save multiple frames for a single prompt into the results/ directory.
+- Begin writing Image2Image refinement code (e.g., using ControlNet or similar conditioning).
+- Update README and results/ with first real generated images and descriptions.
