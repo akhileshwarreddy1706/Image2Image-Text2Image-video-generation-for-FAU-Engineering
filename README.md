@@ -47,7 +47,7 @@ Every step is explained in logs (Week1–Week5), and code is clean, modular, and
 Outputs for Weeks 2–5 are stored under `results/` and regenerate deterministically.
 
 ### ✔ Reproducibility  
-All generation runs **offline**, no API keys required. A TA can reproduce everything using only `requirements.txt`.
+All generation runs **offline**, no API keys required. We can reproduce everything using only `requirements.txt`.
 
 ### ✔ Demo Video  
 A 10–20 minute walkthrough accompanies this project (`demo_video_script.md`).
