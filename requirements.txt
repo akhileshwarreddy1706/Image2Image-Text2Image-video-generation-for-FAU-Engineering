@@ -1,7 +1,15 @@
+# Core image/video dependencies
 pillow==9.5.0
 imageio==2.27.0
 imageio-ffmpeg==0.4.9
 numpy==1.26.4
+# PyTorch (CPU-only universal install)
 torch==2.1.0
+# HuggingFace Diffusers stack (SD Turbo requires these versions)
 diffusers==0.29.0
+transformers==4.41.2
+accelerate==0.30.0
+safetensors==0.4.2
+huggingface_hub==0.23.4
+# ONNX runtime (CPU universal)
 onnxruntime==1.17.0

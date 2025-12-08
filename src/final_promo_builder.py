@@ -92,17 +92,23 @@ def make_end_slide():
 
 def collect_images(directory, max_images=None):
     valid_ext = (".jpg", ".jpeg", ".png")
-    if not os.path.isdir(directory):
-        return []
+    images = []
 
-    imgs = [
-        os.path.join(directory, f)
-        for f in sorted(os.listdir(directory))
-        if f.lower().endswith(valid_ext)
-    ]
+    for f in sorted(os.listdir(directory)):
+        if not f.lower().endswith(valid_ext):
+            continue
+        path = os.path.join(directory, f)
+        try:
+            img = Image.open(path)
+            img.verify()     # validate file
+            images.append(path)
+        except Exception:
+            print(f"[Warning] Skipping corrupted image: {path}")
+
     if max_images:
-        imgs = imgs[:max_images]
-    return imgs
+        images = images[:max_images]
+
+    return images
 
 def merge_videos(video_list, output_path):
     print("\n[Merging] Combining all MP4 clips...")
