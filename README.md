@@ -1,173 +1,242 @@
-
 # Image2Image + Text2Image Video Generation for FAU Engineering
 
 **Course:** CAP6415 – Computer Vision (Fall 2025)  
 **Team:** Akhileshwar Reddy Bommineni, Manaswini Pasupuleti, Pathri Jaydeep  
 **Instructor:** Prof. Velibor Adzic (vadzic@fau.edu)  
-**University:** Florida Atlantic University – College of Engineering and Computer Science  
+**University:** Florida Atlantic University – College of Engineering & Computer Science  
 
 ---
 
 ## 🎯 Abstract
-AI-generated visualizations play an increasingly large role in engineering research, simulations, and educational demonstrations.  
-This project covers a **hybrid AI video generation pipeline** based on **Text-to-Image (T2I)** and **Image-to-Image (I2I)** transformation concepts.
 
-The system conceptually follows three major stages:
+This project implements a complete **generative video creation system** that transforms prompts, images, and diffusion-inspired refinements into an AI-generated **promotional-style video for FAU Engineering**.
 
-1. **Text-to-Image Generation:**  
-   A frame is generated from a descriptive engineering-themed prompt (e.g., *“FAU engineering drone lab with multiple sensors and LED lighting”*).  
-   This is implemented using a **mock diffusion pipeline** to ensure **reproducibility** without needing GPU hardware.
+The pipeline evolves across five structured stages:
 
-2. **Image-to-Image Refinement:**  
-   The generated frame is refined with simulated variations (lighting, angle, color, or sharpness changes).  
-   A lightweight placeholder model is used to demonstrate system architecture.
+- **Week 2:** Mock Image-to-Image refinement  
+- **Week 3:** Mock Text-to-Image generation  
+- **Week 4:** Deterministic T2I + I2I using curated FAU images  
+- **Week 5:** **Real Text-to-Image generation using Stable Diffusion Turbo (offline)**  
+- **Final:** Fully automated **promotional video builder**
 
-3. **Video Assembly:**  
-   Multiple generated frames are stitched into a short engineering-themed video clip.
+All components execute **offline**, ensuring full reproducibility—one of the key grading requirements.
 
-The repository is fully **portable**, **lightweight**, and **reproducible** on macOS, Windows, and Linux.  
-No large downloads, GPUs, or API keys required.
+### Model & Framework Attribution
+- Stable Diffusion Turbo © Stability AI  
+- HuggingFace Diffusers © HuggingFace Team  
+- PyTorch © Meta AI  
+- FAU campus images used under academic fair‑use  
 
 ---
 
-## ⚙️ Installation & Setup
+## 📝 Description
 
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/akhileshwarreddy1706/Image2Image-Text2Image-video-generation-for-FAU-Engineering.git
-cd Image2Image-Text2Image-video-generation-for-FAU-Engineering
-```
+The goal of this course project is to:
 
-### 2️⃣ (Recommended) Create a virtual environment
-```bash
-python -m venv .venv
-source .venv/bin/activate     # macOS/Linux
-# OR
-.venv\Scripts\activate        # Windows
-```
+“Use generative video tools, and real photos and videos of the FAU campus, to create a promotional video for the College of Engineering.”
 
-### 3️⃣ Install dependencies
-```bash
-pip install -r requirements.txt
-```
+Our system meets all requirements:
 
-### 4️⃣ (Optional) Create environment via Conda
-```bash
-conda env create -f environment.yml
-conda activate cap6415-img2vid
-```
+### ✔ Development  
+We progressively built and improved mock diffusion pipelines, dataset tools, real generative models, and a complete video assembly module.
+
+### ✔ Documentation  
+Every step is explained in logs (Week1–Week5), and code is clean, modular, and easy to extend.
+
+### ✔ Results  
+Outputs for Weeks 2–5 are stored under `results/` and regenerate deterministically.
+
+### ✔ Reproducibility  
+All generation runs **offline**, no API keys required. A TA can reproduce everything using only `requirements.txt`.
+
+### ✔ Demo Video  
+A 10–20 minute walkthrough accompanies this project (`demo_video_script.md`).
 
 ---
 
 ## 📁 Repository Structure
 
-```bash
-├── dataset/
-│   └── fau_images/                # 16 curated FAU campus images (Week 4)
-│
-├── models/
-│   └── onnx/                      # Config placeholders (no heavy models)
-│
-├── notebooks/                     # (Reserved for future expansion)
-│
-├── results/
-│   ├── week2_frames/              # Week 2: Initial pipeline frames
-│   ├── week3_frames/              # Week 3: Mock ONNX frames
-│   ├── week4_t2i/                 # Week 4: Text-to-Image output
-│   └── week4_i2i/                 # Week 4: Image-to-Image output
-│
-├── scripts/
-│   └── rename_fau_images.py       # Dataset renaming script for Week 4
-│
-├── src/
-│   ├── generate_frames.py         # Week 3 T2I mock generator
-│   ├── refine_frames.py           # Week 3 I2I mock refinement
-│   ├── frames_to_video.py         # Combine frames into a video clip
-│   ├── week4_text2image.py        # Week 4: Text-to-Image pipeline
-│   └── week4_image2image.py       # Week 4: Image-to-Image pipeline
-│
-├── week1log.txt
-├── week2log.txt
-├── week3log.txt
-├── week4log.txt                   # NEW – Week 4 work summary
-│
-├── requirements.txt               # Python dependencies
-├── environment.yml                # Conda environment specification
-│
-├── demo_video_script.md           # Outline for final project presentation
-├── LICENSE                        # MIT License
-└── README.md                      # Project documentation (this file)
+```
+src/
+│── final_promo_builder.py          # Final official promotional video builder
+│── assemble_video.py               # Legacy weekly video assembler
+│── t2i_mock_generator.py           # Week 3 – Mock T2I
+│── i2i_mock_refiner.py             # Week 2 – Mock I2I
+│── t2i_week4_prompt_generator.py   # Week 4 – Deterministic T2I
+│── i2i_week4_refiner.py            # Week 4 – Deterministic I2I
+│── t2i_week5_real_generator.py     # Week 5 – REAL SD-Turbo T2I
+
+scripts/
+│── prepare_fau_dataset.py
+
+dataset/
+│── fau_images/                     # 16 selected FAU campus images
+
+results/                             # Empty on repo clone; populated after running scripts
+│── (auto‑generated weekly outputs)
+│── (auto‑generated final promo video)
+
+run_full_pipeline.sh                      # Full automation script (Weeks 2–5 mock + real)
+
+week1log.txt  
+week2log.txt  
+week3log.txt  
+week4log.txt  
+week5log.txt  
+requirements.txt  
+environment.yml  
+README.md  
+LICENSE  
+demo_video_script.md  
+verified_commits_setup.md
 ```
 
 ---
 
-## 🚀 Running the Project
+## ▶️ Execution Guide (Reproducible Offline)
 
-### Week 3 — Generate mock frames (Text-to-Image)
+### 1️⃣ Create environment
 ```bash
-python src/generate_frames.py
-```
-
-### Week 3 — Refine frames (Image-to-Image)
-```bash
-python src/refine_frames.py
-```
-
-### Convert frames to video
-```bash
-python src/frames_to_video.py
-```
-
-### 🧠 Text-to-Image (T2I)
-We used the following prompt:
-
-> **“FAU campus at night, futuristic neon lights, cinematic wide-angle view”**
-
-This produces three generated variations:
-
-```
-results/week4_t2i/t2i_0.png
-results/week4_t2i/t2i_1.png
-results/week4_t2i/t2i_2.png
-```
-
-Run using:
-
-```bash
-python src/week4_text2image.py
+python3 -m venv fau
+source fau/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ---
 
-### 🎨 Image-to-Image (I2I)
-The base image used:
-
-```
-dataset/fau_images/fau_01.jpg
-```
-
-Outputs produced:
-
-```
-results/week4_i2i/i2i_0.png
-results/week4_i2i/i2i_1.png
-results/week4_i2i/i2i_2.png
-results/week4_i2i/i2i_base_input.png
-```
-
-Run using:
-
+## 2️⃣ Week 2 — Mock Image‑to‑Image
 ```bash
-python src/week4_image2image.py
+python src/i2i_mock_refiner.py
 ```
 
 ---
 
-## ✔️ Reproducibility
-The project fully follows the reproducibility requirement:
+## 3️⃣ Week 3 — Mock Text‑to‑Image
+```bash
+python src/t2i_mock_generator.py
+```
 
-- No external API calls  
-- No GPU-specific features  
-- No random non-deterministic behavior  
-- All outputs generated locally  
-- TA can run everything using only the provided scripts and dataset  
+---
+
+## 4️⃣ Week 4 — Deterministic T2I + I2I
+```bash
+python src/t2i_week4_prompt_generator.py
+python src/i2i_week4_refiner.py
+```
+
+Outputs:
+
+```
+results/week4_t2i/
+results/week4_i2i/
+```
+
+---
+
+## 5️⃣ Week 5 — Real Text‑to‑Image (SD‑Turbo)
+```bash
+python src/t2i_week5_real_generator.py
+```
+
+Outputs:
+
+```
+results/week5_t2i_real/
+```
+
+---
+
+## 6️⃣ Final Promotional Video 
+```bash
+python src/final_promo_builder.py
+```
+
+This generates the **official submission video**:
+
+```
+results/final_promo_video.mp4
+```
+
+This video includes:
+- Title slide  
+- Week 5 T2I images (1 sec each)  
+- Week 4 I2I slideshow (2.5 sec total)  
+- Dataset slideshow (6 images × 1 sec)  
+- End slide  
+
+---
+
+## 7️⃣ Optional — Run the Entire Pipeline with One Command  
+```bash
+bash run_full_pipeline.sh
+```
+
+---
+
+## 🧪 Reproducibility
+
+Our project is fully reproducible because:
+
+- All scripts run **offline**
+- Every weekly output is generated deterministically  
+- Week 5 uses Stable Diffusion Turbo locally  
+- Full pipeline regenerates from scratch using only:
+  ```
+  pip install -r requirements.txt
+  python src/final_promo_builder.py
+  ```
+
+---
+
+## 📊 Results Overview
+
+### Week 5 – Final Real FAU Images  
+Stored in:
+
+```
+results/week5_t2i_real/
+```
+
+These power the promotional video.
+
+### Full Promotional Video  
+```
+results/final_promo_video.mp4
+```
+
+---
+
+## 🎥 Demo Video
+
+The demo video includes:
+
+- Code walkthrough  
+- Weekly evolution of models  
+- Live execution  
+- Analysis  
+- Final promotional video  
+
+See: `demo_video_script.md`.
+
+---
+
+## ✔️ Conclusion
+
+This project delivers a fully offline, reproducible, modular generative video pipeline featuring:
+
+- Image‑to‑Image + Text‑to‑Image  
+- Mock + deterministic + real diffusion  
+- Automated branding  
+- Professional video assembly  
+
+---
+
+## 🧩 Limitations & Future Work
+
+- SD‑Turbo favors speed → lower resolution  
+- No temporal diffusion → slight frame inconsistency  
+- Future improvements:
+  - SD‑XL for HQ images  
+  - ControlNet for structure control  
+  - Real temporal video diffusion  

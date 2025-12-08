@@ -1,0 +1,55 @@
+WEEK 5 LOG — Real Text-to-Image Generation (Stable Diffusion Turbo)
+
+1. Objective
+
+Week 5 introduces the final real generative component of the project, integrating Stable Diffusion Turbo, SD-Turbo, to produce high-quality FAU-branded Text-to-Image outputs completely offline.
+The objective was to replace the mock diffusion stages with actual generation, without sacrificing complete reproducibility-a required grading component.
+The core pipeline from Week 2–4 remains the same and forms a structural basis for Week 5.
+
+⸻
+
+2. Work Done
+
+Implemented new real T2I module:
+src/t2i_week5_real_generator.py
+Integrated Stable Diffusion Turbo from HuggingFace Diffusers (local model, no API).
+Added FAU-specific prompts, e.g.:
+•	FAU Engineering building
+•	FAU Breezeway
+•   Stadium and entrance scenes
+•	Branding-enhanced promotional imagery
+mplemented auto-overlay of FAU logo using Pillow.
+
+Created output directory:
+results/week5_t2i_real/
+Used deterministic output (fully reproducible for the same prompts).
+Updated project workflow to include Week 5 real outputs in the final promotional video.
+Verified compatibility with the pipeline in Week 4 without breaking changes.
+
+⸻
+
+3. Testing Done
+•\tVerified that Diffusers, Torch, and Pillow are imported successfully.
+• Ensured the SD-Turbo pipeline loads locally without making any network calls.
+• Generated a full batch of FAU-branded images.
+• Confirmed image dimensions and color format matched the video assembly requirements.
+• Confirmed the final promo video builder correctly incorporates Week 5 outputs.
+Ensured reproducibility by:
+• Lock model version
+Deterministic seeds
+• FIXED: image count and resolution
+
+⸻
+
+4. Notes
+
+• No API keys are needed; everything runs offline by design.
+• This fulfills the professor’s requirement for reproducibility. 
+• High-speed SD-Turbo allows quick regeneration during live demo. 
+• Real generative outputs are much more realistic than mocks from Weeks 2–4.
+⸻
+
+5. Status 
+Successfully completed week 5. 
+We generate realistic FAU-branded T2I images offline, which afterwards are combined with the final promotional video pipeline. 
+The project is now complete and ready for final submission and demo. 

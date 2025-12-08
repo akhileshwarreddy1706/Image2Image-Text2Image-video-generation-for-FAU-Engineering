@@ -20,11 +20,20 @@ env/
 # === Jupyter ===
 .ipynb_checkpoints/
 
-# === Project Outputs ===
-results/*.tmp
-results/*.log
+# === Temporary / Auto-generated Files ===
+results/_temp_slides/
+results/concat_list.txt
+
+# === Final / Non-essential Video Outputs ===
 results/*.mp4
+results/*.gif
+results/*.avi
+
+# Keep the important generated images (Week2–Week5)
+# But ignore accidental stray image dumps:
 results/*.png
 results/*.jpg
+
+# === Notebooks Output ===
 notebooks/*.csv
 notebooks/*.h5

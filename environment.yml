@@ -1,13 +1,17 @@
 name: cap6415-img2vid
 channels:
-  - defaults
   - conda-forge
+  - defaults
+
 dependencies:
   - python=3.10
   - pip
+  - ffmpeg             # needed for all slideshow + merge operations
   - pip:
-      - pillow
-      - imageio
-      - numpy
+      - pillow==9.5.0
+      - imageio==2.27.0
+      - imageio-ffmpeg==0.4.9
+      - numpy==1.26.4
+      - torch==2.1.0
       - diffusers==0.29.0
-      - onnxruntime
+      - onnxruntime==1.17.0
