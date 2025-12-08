@@ -19,7 +19,7 @@ The pipeline evolves across five structured stages:
 - **Week 5:** **Real Text-to-Image generation using Stable Diffusion Turbo (offline)**  
 - **Final:** Fully automated **promotional video builder**
 
-All components execute **offline**, ensuring full reproducibility—one of the key grading requirements.
+All components execute **offline**, ensuring full reproducibility.
 
 ### Model & Framework Attribution
 - Stable Diffusion Turbo © Stability AI  
