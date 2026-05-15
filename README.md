@@ -1,7 +1,6 @@
 # Image2Image + Text2Image Video Generation for FAU Engineering
 
-**Course:** CAP6415 – Computer Vision (Fall 2025)  
-**Team:** Akhileshwar Reddy Bommineni, Manaswini Pasupuleti, Pathri Jaydeep  
+**Course:** CAP6415 – Computer Vision (Fall 2025)    
 **Instructor:** Prof. Velibor Adzic (vadzic@fau.edu)  
 **University:** Florida Atlantic University – College of Engineering & Computer Science  
 
